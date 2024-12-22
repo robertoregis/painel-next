@@ -1,0 +1,151 @@
+// Colors
+
+$gray: #808080;
+$black: #000000;
+$white: #ffffff;
+$main: #7BA05B;
+
+$red-6: #f44335;
+$red-8: #D4452F;
+
+$purple-4: #BA68C8;
+$purple-6: #9b27b0;
+
+$indigo-8: #32449F;
+
+$blue-4: #64B5F5;
+$blue-8: #1876D2;
+
+$teal-8: #366A5C;
+
+$green-6: #4baf50;
+$green-8: #528F3D;
+
+$yellow-8: #F2A723;
+
+$orange-4: #F5B64D;
+$orange-8: #EB7B1A;
+
+$brown-6: #795448;
+
+$grey-4: #E0E0E0;
+$grey-6: #9e9e9e;
+
+$blue-grey-6: #607d8b;
+$blue-grey-8: #37484F;
+
+@function getColor($color) {
+    $lightness: lightness($color);
+    @if($lightness <= 60) {
+        @return rgb(249, 244, 244);
+    } @else {
+        @return rgb(28, 27, 27);
+    }
+}
+
+@function getFilterButton($color) {
+    $lightness: lightness($color);
+    @if($lightness <= 60) {
+        @return invert(0);
+    } @else {
+        @return invert(1);
+    }
+}
+
+@function getColorNextDuels($color) {
+    $lightness: lightness($color);
+    @if($lightness < 60) {
+        @return rgb(249, 244, 244);
+    } @else {
+        @return rgb(126, 121, 121);
+    }
+}
+
+$placarsoft-colors: (
+    "red-6": $red-6,
+    "red-8": $red-8,
+
+    "purple-4": $purple-4,
+    "purple-6": $purple-6,
+
+    "indigo-8": $indigo-8,
+
+    "blue-4": $blue-4,
+    "blue-8": $blue-8,
+
+    "teal-8": $teal-8,
+
+    "green-6": $green-6,
+    "green-8": $green-8,
+
+    "yellow-8": $yellow-8,
+
+    "orange-4": $orange-4,
+    "orange-8": $orange-8,
+
+    "brown-6": $brown-6,
+
+    "grey-4": $grey-4,
+    "grey-6": $grey-6,
+
+    "blue-grey-6": $blue-grey-6,
+    "blue-grey-8": $blue-grey-8,
+
+    "white": $white,
+    "black": $black,
+    "main": $main
+);
+
+@each $color, $value in $placarsoft-colors {
+
+    .bg-#{$color} {
+        background: $value !important;
+    }
+    .dark-bg-#{$color} {
+        background: $value !important;
+        filter: brightness(85%);
+    }
+    .btn-#{$color} {
+        background: $value !important;
+        color: getColor($value) !important;
+    }
+    .text-#{$color} {
+        color: $value !important;
+    }
+    .my-text-#{$color} {
+        color: getColor($value) !important;
+    }
+    .hover-my-text-#{$color}{
+        &:hover { color: getColor($value)  !important; }
+    }
+    .focus-my-text-#{$color}{
+        &:focus { color: getColor($value)  !important; }
+    }
+    .border-#{$color}{
+        border-color: $value !important;
+    }
+    .my-border-#{$color}{
+        border-color: getColor($value) !important;
+    }
+    .disabled-#{$color}{
+        color: rgba($value, 0.5) !important;
+    }
+    .my-disabled-#{$color}{
+        color: rgba(getColor($value), 0.5) !important;
+    }
+    .filter-#{$color}{
+        filter: getFilterButton($value) !important;
+    }
+    .hover-text-#{$color}{
+        &:hover { color: $value !important; }
+    }
+    .focus-text-#{$color}{
+        &:focus { color: $value !important; }
+    }
+    .hover-bg-#{$color}{
+        &:hover { background-color: $value !important; }
+    }
+    .focus-bg-#{$color}{
+        &:focus { background-color: $value !important; }
+    }
+}
