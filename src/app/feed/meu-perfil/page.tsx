@@ -1,5 +1,4 @@
 'use client'
-import Image from "next/image";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,22 +9,17 @@ import {
   FormLabel,
   FormHelperText,
   Input,
-  Checkbox,
-  Textarea,
   InputGroup,
   InputRightElement,
   Select,
   SkeletonText
 } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
-import { FaPlusSquare } from "react-icons/fa";
 import React, { useEffect, useState, useContext } from "react";
 import { useRouter, useSearchParams, useParams } from 'next/navigation';
-import Link from 'next/link';
 import { UserContext } from "@/app/context/UserContext";
 import CropImage from '@/app/components/CropImage';
 import ShowImage from '@/app/components/ShowImage';
-import AddRoleInUser from '@/app/components/AddRoleInUser';
 import { showToast } from '@/app/utils/chakra';
 import { removeFromLocalStorage, saveToLocalStorage } from '@/app/utils/localStorage';
 import ToolsMenu from '@/app/components/ToolsMenu';
@@ -42,7 +36,6 @@ export default function Home() {
   const _userContext = useContext(UserContext);
   const _modalContext = useContext(ModalContext);
   const toast = useToast()
-  const [user, setUser] = useState<any>({})
   const [loading, setLoading] = useState<boolean>(true)
   const [userModel, setUserModel] = useState<any>({
     username: '',
@@ -52,8 +45,6 @@ export default function Home() {
     state: '',
     stateId: ''
   })
-  const searchParams = useSearchParams();  // Use useSearchParams to get URL params
-  const params = useParams()
   const [states, setStates] = useState<any[]>([])
   const [stateSelected, setStateSelected] = useState<any>();
   const [cities, setCities] = useState<any[]>([])
@@ -61,9 +52,7 @@ export default function Home() {
   const [imageSrc, setImageSrc] = useState('');
   const [isImage, setIsImage] = useState<boolean>(false)
   const [file, setFile] = useState<any>()
-  const [isCreating, setIsCreating] = useState<boolean>(false)
   const [aspect, setAspect] = useState(4 / 4); // Valor padrão
-  const [isEditing, setIsEditing] = useState<boolean>(false)
   const optionsToolsMenu: any = []
 
   const handlePasswordChange = (e: any) => {

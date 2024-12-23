@@ -4,12 +4,9 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbSeparator,
-  Link,
   Button,
   FormControl,
   FormLabel,
-  FormErrorMessage,
   FormHelperText,
   Input,
   useToast,
@@ -27,7 +24,6 @@ import CropImage from "@/app/components/CropImage";
 import ShowImage from "@/app/components/ShowImage";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true)
   const [jobModel, setJobModel] = useState<any>({
     name: '',
     type: '',
@@ -36,16 +32,14 @@ export default function Home() {
   const router = useRouter();
   const params: any = useParams();
   const [loading, setLoading] = useState(true)
-  const [firstFetch, setFirstFetch] = useState(false)
   const [isCreating, setIsCreating] = useState<boolean>(false)
   const [isEditing, setIsEditing] = useState<boolean>(false)
   const toast = useToast()
-  const [show, setShow] = React.useState(false)
   const [imageSrc, setImageSrc] = useState('');
   const [isImage, setIsImage] = useState<boolean>(false)
   const [aspect, setAspect] = useState(16 / 9); // Valor padrão
   const [file, setFile] = useState<any>()
-  const [files, setFiles] = useState<any[]>([])
+  //const [files, setFiles] = useState<any[]>([])
   const _userContext = useContext(UserContext);
   const _modalContext = useContext(ModalContext)
   const optionsToolsMenu: any = []

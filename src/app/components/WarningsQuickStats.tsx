@@ -21,7 +21,6 @@ interface Props {
 const WarningsQuickStats: React.FC<Props> = ({ title, text }) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   const handleCardClick = () => {
     onClose(); // Fecha o Popover
   };

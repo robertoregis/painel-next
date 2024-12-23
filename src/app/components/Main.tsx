@@ -1,34 +1,15 @@
 'use client'
 import "../style.css";
 
-import React, { useState, useRef, useMemo, useEffect, useContext } from 'react';
-import { MdDashboard } from "react-icons/md";
+import React, { useState, useEffect, useContext } from 'react';
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-import { AiOutlineMenuFold, AiOutlineMenuUnfold, AiFillAlert } from "react-icons/ai";
-import { IoMdWarning } from "react-icons/io";
 import { NavContext } from "../context/NavContext";
 import Topbar from "./Topbar";
 
 const Main = ({children}: any) => {
 
 	const pathname = usePathname()
-	const [isShowMenu, setIsShowMenu] = useState(true)
   const context = useContext(NavContext)
-
-  const changeNavTest = () => {
-    context?.setNav((newState: any) => ({
-      ...newState,
-      test: 'novo'
-    }))
-  }
-
-  const changeIsShowNav = (value: Boolean) => {
-    context?.setNav((newState: any) => ({
-      ...newState,
-      isShowNav: value
-    }))
-  }
 
 	useEffect(() => {
 		//alert(pathname)

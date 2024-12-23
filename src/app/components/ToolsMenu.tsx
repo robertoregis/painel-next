@@ -4,20 +4,12 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
   IconButton,
-  Avatar,
-  Button,
   Tooltip
 } from '@chakra-ui/react';
-import { AddIcon, ExternalLinkIcon, RepeatIcon} from '@chakra-ui/icons';
-import Link from 'next/link';
+import { AddIcon } from '@chakra-ui/icons';
 import { SlOptionsVertical } from "react-icons/sl";
 import { useRouter } from 'next/navigation';
-
 
 interface Props {
   options?: any

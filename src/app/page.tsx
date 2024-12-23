@@ -1,12 +1,12 @@
 'use client'
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import {
   Spinner
 } from '@chakra-ui/react';
 import { useRouter } from 'next/navigation';
 import { UserContext } from "./context/UserContext";
 import { ConfigContext } from "./context/ConfigContext";
-import { loadFromLocalStorage, removeFromLocalStorage } from "./utils/localStorage";
+import { loadFromLocalStorage } from "./utils/localStorage";
 
 
 export default function Home() {

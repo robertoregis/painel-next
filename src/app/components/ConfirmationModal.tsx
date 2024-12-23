@@ -1,8 +1,6 @@
 'use client'
 import React, { useState, useContext } from 'react';
 import { 
-  Spinner, 
-  CircularProgress,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -13,11 +11,9 @@ import {
   Button,
   FormControl,
   InputGroup,
-  FormLabel,
   Input,
   InputRightElement
 } from '@chakra-ui/react';
-import { LineWave, Hourglass, RotatingLines } from 'react-loader-spinner';
 import { ModalContext } from '../context/ModalContext';
 
 

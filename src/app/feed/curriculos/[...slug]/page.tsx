@@ -4,8 +4,6 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbSeparator,
-  Link,
   Button,
   FormControl,
   FormLabel,
@@ -17,7 +15,6 @@ import {
   Tooltip,
   Icon,
   Tag,
-  TagCloseButton,
   TagLabel,
   Wrap,
   WrapItem
@@ -26,7 +23,6 @@ import { ChevronRightIcon, SearchIcon } from '@chakra-ui/icons';
 import { MdCleaningServices } from "react-icons/md";
 import React, { useEffect, useState, useContext } from "react";
 import { buildQueryString } from "../../../utils/textFormatters";
-import InputMask from 'react-input-mask';
 import { useRouter, useParams } from 'next/navigation';
 import { UserContext } from "@/app/context/UserContext";
 import ToolsMenu from "@/app/components/ToolsMenu";
@@ -52,7 +48,7 @@ export default function Home() {
     userId: null
   })
   const router = useRouter();
-  const params = useParams();
+  const params: any = useParams();
   const [firstFetch, setFirstFetch] = useState(false)
   const toast = useToast()
   const _userContext = useContext(UserContext);

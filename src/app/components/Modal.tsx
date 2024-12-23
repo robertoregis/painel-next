@@ -1,20 +1,16 @@
 'use client'
 import "../style.css";
 
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Modal,
     ModalOverlay,
     ModalContent,
-    ModalHeader,
-    ModalFooter,
     ModalBody,
-    ModalCloseButton,
     useDisclosure,
-    Button,
 } from '@chakra-ui/react';
 
-const ModalComponent = ({ prop }: any) => {
+const ModalComponent = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 	
 	return (

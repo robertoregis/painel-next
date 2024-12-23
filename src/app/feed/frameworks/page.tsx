@@ -8,8 +8,6 @@ import {
   Card,
   CardBody,
   Box,
-  Skeleton,
-  SkeletonCircle,
   SkeletonText,
   Popover,
   PopoverTrigger,
@@ -17,14 +15,12 @@ import {
   PopoverContent,
   IconButton,
   Tooltip,
-  Avatar,
   Wrap,
   useToast
 } from '@chakra-ui/react';
 import { ChevronRightIcon, ArrowLeftIcon, ArrowRightIcon, DeleteIcon } from '@chakra-ui/icons';
 import React, { useEffect, useState, useContext, useRef } from "react";
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import { UserContext } from "@/app/context/UserContext";
 import ToolsMenu from "@/app/components/ToolsMenu";
 import NotData from "@/app/components/NotData";
@@ -35,7 +31,6 @@ import { removeFromLocalStorage } from "@/app/utils/localStorage";
 import { ModalContext } from "@/app/context/ModalContext";
 
 export default function Home() {
-  const [show, setShow] = React.useState<boolean>(false)
   const [frameworks, setFrameworks] = useState<any[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const router = useRouter();

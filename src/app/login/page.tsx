@@ -8,7 +8,7 @@ import {
   InputRightElement,
   useToast
 } from '@chakra-ui/react';
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { useRouter } from 'next/navigation';
 import { UserContext } from '../context/UserContext';
 import { ConfigContext } from '../context/ConfigContext';

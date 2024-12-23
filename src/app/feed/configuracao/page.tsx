@@ -22,8 +22,7 @@ import {
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import { FaPlusSquare } from "react-icons/fa";
 import React, { useEffect, useState, useContext } from "react";
-import { useRouter, useSearchParams, useParams } from 'next/navigation';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { UserContext } from "@/app/context/UserContext";
 import { getMyColors } from "@/app/utils/colors";
 import ToolsMenu from "@/app/components/ToolsMenu";
@@ -55,6 +54,8 @@ interface modelConfig {
   phones: string[];
   emails: string[];
   info: infoConfig;
+  createdAt: Date | null;
+  updatedAt: Date | null;
 }
 
 export default function Home() {
@@ -90,7 +91,9 @@ export default function Home() {
       cpf: '',
       cnpj: '',
       money: ''
-    }
+    },
+    createdAt: null,
+    updatedAt: null
   });
   const colors = getMyColors()
   const [colorSelect, setColorSelect] = useState('')
@@ -282,13 +285,14 @@ export default function Home() {
   const createConfigFetch = async () => {
     try {
       _modalContext.onOpenLoading()
+      const { createdAt, updatedAt, ...configModelWithoutTimestamps } = configModel
       const response = await fetch('https://backend-my-site.onrender.com/config/1', {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json', // Tipo de conteúdo que você está enviando
           'Authorization': `Bearer ${_userContext?.token}`,
         },
-        body: JSON.stringify(configModel),
+        body: JSON.stringify(configModelWithoutTimestamps),
       });
       
       if (!response.ok) {
@@ -673,8 +677,7 @@ export default function Home() {
           <div className="grid grid-cols-1">
             <div className="col-span-1">
               <div className="flex items-center">
-                <Button style={{ backgroundColor: "#718096", color: "white" }} className="mr-2">Limpar</Button>
-                <Button onClick={createConfigFetch} colorScheme='green' className="mr-2">Criar</Button>
+                <Button onClick={createConfigFetch} colorScheme='green' className="mr-2">Salvar</Button>
               </div>
             </div>
           </div>

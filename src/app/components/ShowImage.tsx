@@ -6,19 +6,12 @@ import {
     Modal,
     ModalOverlay,
     ModalContent,
-    ModalHeader,
-    ModalFooter,
     ModalBody,
-    ModalCloseButton,
     useDisclosure,
-    Button,
 } from '@chakra-ui/react';
-import Cropper from 'react-easy-crop';
 
 const ShowImage = ({ img, isBig = false }: any) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const [imageSrc, setImageSrc] = useState('');
-    const [file, setFile] = useState<any>();
 	
 	return (
         <>

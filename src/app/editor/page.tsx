@@ -1,6 +1,5 @@
 "use client"; // Marca este arquivo como um Client Component
-import React, { useState, useRef, useMemo, useEffect } from 'react';
-import EditImage from '../components/EditImage';
+import React, { useState, useEffect } from 'react';
 import CropImage from '../components/CropImage';
 
 export default function Home ({ placeholder }: any) {

@@ -21,7 +21,6 @@ import {
   Wrap,
   useToast
 } from '@chakra-ui/react';
-import Link from 'next/link';
 import { ChevronRightIcon, ArrowLeftIcon, ArrowRightIcon, DeleteIcon } from '@chakra-ui/icons';
 import React, { useEffect, useState, useContext, useRef } from "react";
 import { useRouter } from 'next/navigation';

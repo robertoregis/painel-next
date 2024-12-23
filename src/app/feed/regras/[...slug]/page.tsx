@@ -10,11 +10,10 @@ import {
   Input,
   useToast
 } from '@chakra-ui/react';
-import Link from 'next/link';
 import Select from 'react-select';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import React, { useEffect, useState, useContext } from "react";
-import { useRouter, useSearchParams, useParams } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { UserContext } from '@/app/context/UserContext';
 import ToolsMenu from '@/app/components/ToolsMenu';
 import { showToast } from '@/app/utils/chakra';
@@ -41,7 +40,7 @@ export default function Home() {
   const _userContext = useContext(UserContext);
   const _modalContext = useContext(ModalContext);
   const router = useRouter();
-  const params = useParams();
+  const params: any = useParams();
   const toast = useToast();
   const [loading, setLoading] = useState(true)
   const [isCreating, setIsCreating] = useState<boolean>(false)

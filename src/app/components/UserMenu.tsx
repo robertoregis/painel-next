@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {
   Menu,
   MenuButton,
@@ -10,7 +10,6 @@ import {
   useToast
 } from '@chakra-ui/react';
 import { MdNavigation, MdLogout } from "react-icons/md";
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { UserContext } from '../context/UserContext';
 import { removeFromLocalStorage } from '../utils/localStorage';

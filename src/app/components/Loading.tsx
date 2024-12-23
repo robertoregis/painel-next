@@ -1,15 +1,10 @@
 'use client'
 import React, { useContext } from 'react';
 import { 
-  Spinner, 
-  CircularProgress,
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
-  ModalFooter,
   ModalBody,
-  ModalCloseButton,
 } from '@chakra-ui/react';
 import { RotatingLines } from 'react-loader-spinner';
 import { ModalContext } from '../context/ModalContext';

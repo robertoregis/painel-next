@@ -5,7 +5,6 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Button,
-  Spinner,
   SkeletonText,
   Popover,
   PopoverTrigger,
@@ -13,7 +12,6 @@ import {
   PopoverContent,
   IconButton,
   Tooltip,
-  Avatar,
   Wrap,
   useToast,
   Box,
@@ -23,7 +21,6 @@ import {
 import { ChevronRightIcon, ArrowLeftIcon, ArrowRightIcon, DeleteIcon } from '@chakra-ui/icons';
 import React, { useEffect, useState, useContext, useRef } from "react";
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import { UserContext } from "@/app/context/UserContext";
 import ToolsMenu from "@/app/components/ToolsMenu";
 import NotData from "@/app/components/NotData";

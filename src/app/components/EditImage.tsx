@@ -13,7 +13,7 @@ import {
     useDisclosure,
     Button
 } from '@chakra-ui/react';
-import ReactCrop, { type Crop } from 'react-image-crop';
+import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css'
 
 const EditImage = ({ getData }: any) => {

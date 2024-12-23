@@ -3,18 +3,14 @@ import "../style.css";
 import {
 	Drawer,
 	DrawerBody,
-	DrawerFooter,
 	DrawerHeader,
 	DrawerOverlay,
 	DrawerContent,
 	DrawerCloseButton,
-	Button,
-	Input,
 } from '@chakra-ui/react';
-import React, { useState, useRef, useMemo, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { MdDashboard } from "react-icons/md";
 import { usePathname, useRouter } from 'next/navigation';
-import Link from 'next/link';
 import { NavContext } from "../context/NavContext";
 import { UserContext } from "../context/UserContext";
 

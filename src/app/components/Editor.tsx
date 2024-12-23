@@ -1,8 +1,8 @@
 'use client'
 import "../style.css";
 
-import React, { useState, useRef, useMemo } from 'react';
-import JoditEditor, { Jodit } from 'jodit-react';
+import React, { useRef, useMemo } from 'react';
+import JoditEditor from 'jodit-react';
 
 
 export default ({ content, setContent }: any) => {

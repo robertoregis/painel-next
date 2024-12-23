@@ -1,22 +1,17 @@
 'use client'
-import Image from "next/image";
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbSeparator,
-  Link,
   Button,
   FormControl,
   FormLabel,
-  FormErrorMessage,
   FormHelperText,
   Input,
   useToast,
 } from '@chakra-ui/react';
 import React, { useEffect, useState, useContext } from "react";
 import { ChevronRightIcon } from '@chakra-ui/icons';
-import InputMask from 'react-input-mask';
 import { useRouter, useParams } from 'next/navigation';
 import { UserContext } from "@/app/context/UserContext";
 import ToolsMenu from "@/app/components/ToolsMenu";
@@ -27,16 +22,15 @@ import CropImage from "@/app/components/CropImage";
 import ShowImage from "@/app/components/ShowImage";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true)
   const [languageModel, setLanguageModel] = useState<any>({
     name: null,
     type: null,
     userId: null
   })
   const router = useRouter();
-  const params = useParams();
+  const params: any = useParams();
   const [loading, setLoading] = useState(true)
-  const [firstFetch, setFirstFetch] = useState(false)
+  //const [firstFetch, setFirstFetch] = useState(false)
   const [isCreating, setIsCreating] = useState<boolean>(false)
   const [imageSrc, setImageSrc] = useState('');
   const [isImage, setIsImage] = useState<boolean>(false)

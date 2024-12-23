@@ -4,13 +4,9 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Button,
-  Select,
   useToast,
   SkeletonText,
-  Avatar,
   Box,
-  IconButton,
-  Tooltip,
   Card,
   CardHeader,
   CardBody,
@@ -21,25 +17,20 @@ import {
   Heading,
   Badge
 } from '@chakra-ui/react';
-import { Link } from '@chakra-ui/next-js'
-//import Link from 'next/link';
-import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons';
-import { MdEdit, MdLocalPolice } from "react-icons/md";
+import { ChevronRightIcon } from '@chakra-ui/icons';
+import { MdEdit } from "react-icons/md";
 import React, { useEffect, useState, useContext } from "react";
-import { useRouter, useSearchParams, useParams } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { UserContext } from '@/app/context/UserContext';
-import AddRoleInUser from '@/app/components/AddRoleInUser';
 import ToolsMenu from '@/app/components/ToolsMenu';
-import ShowImage from '@/app/components/ShowImage';
 import { removeFromLocalStorage } from '@/app/utils/localStorage';
 import { showToast } from '@/app/utils/chakra';
 import { ModalContext } from '@/app/context/ModalContext';
 
 export default function Home() {
   const [show, setShow] = React.useState(false)
-  const handleClick = () => setShow(!show)
   const _userContext = useContext(UserContext);
-  const _modalContext = useContext(ModalContext);
+  //const _modalContext = useContext(ModalContext);
   const router = useRouter();
   const [userRole, setRoleId] = useState<any>(null)
   const [role, setRole] = useState<any>({})

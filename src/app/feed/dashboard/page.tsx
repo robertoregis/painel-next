@@ -4,43 +4,29 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  Button,
-  Card,
-  CardBody,
-  Box,
-  Skeleton,
-  SkeletonCircle,
-  SkeletonText,
   Stat,
   StatLabel,
   StatNumber,
   StatHelpText,
   StatArrow,
-  StatGroup,
 } from '@chakra-ui/react';
-import Link from 'next/link';
-import { ChevronRightIcon, ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons';
+import { ChevronRightIcon } from '@chakra-ui/icons';
 import React, { useEffect, useState, useContext, useRef } from "react";
 import { useRouter } from 'next/navigation';
 import { UserContext } from "@/app/context/UserContext";
 import ToolsMenu from "@/app/components/ToolsMenu";
-import { RiNumbersFill } from "react-icons/ri";
-import { PiApproximateEqualsBold } from "react-icons/pi";
 
 
 export default function Home() {
-  const [show, setShow] = React.useState<boolean>(false)
   const [dashboard, setDashboard] = useState<any>([])
   const [loading, setLoading] = useState<boolean>(false)
   const router = useRouter();
   const _userContext = useContext(UserContext)
-  const isLoaded = useRef(false)
-  const isPage = useRef(false)
   const optionsToolsMenu: any = []
 
-  const goRouter = (href: string) => {
+  /*const goRouter = (href: string) => {
     router.push(href)
-  }
+  }*/
 
   const getDashboardFetch = async () => {
     try {

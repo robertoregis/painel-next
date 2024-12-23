@@ -8,19 +8,14 @@ import {
   FormLabel,
   FormHelperText,
   Input,
-  Checkbox,
-  Textarea,
   InputGroup,
   InputRightElement,
   Select,
   useToast,
   SkeletonText
 } from '@chakra-ui/react';
-import Link from 'next/link';
 import { ChevronRightIcon } from '@chakra-ui/icons';
-import { MdOutlineRule } from "react-icons/md";
 import React, { useEffect, useState, useContext } from "react";
-import InputMask from 'react-input-mask';
 import { useRouter, useSearchParams, useParams } from 'next/navigation';
 import { UserContext } from '@/app/context/UserContext';
 import CropImage from '@/app/components/CropImage';
@@ -46,8 +41,7 @@ export default function Home() {
   const _userContext = useContext(UserContext);
   const _modalContext = useContext(ModalContext);
   const router = useRouter();
-  const searchParams = useSearchParams();  // Use useSearchParams to get URL params
-  const params = useParams()
+  const params: any = useParams()
   const [states, setStates] = useState<any[]>([])
   const [stateSelected, setStateSelected] = useState<any>();
   const [cities, setCities] = useState<any[]>([])
@@ -405,7 +399,7 @@ export default function Home() {
             isEditing && !loading && (
               <>
               <div className="flex mt-2">
-                <AddRoleInUser user={userModel} changeUser="changeUser" />
+                <AddRoleInUser user={userModel} changeUser={changeUser} />
               </div>
               </>
             )

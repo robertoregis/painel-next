@@ -16,7 +16,6 @@ import {
   Tooltip,
   Icon,
   Tag,
-  TagCloseButton,
   TagLabel,
   Wrap,
   WrapItem
@@ -56,7 +55,7 @@ export default function Home() {
     body: '',
     userId: '',
   })
-  const params = useParams()
+  const params: any = useParams()
   const [isCreating, setIsCreating] = useState<boolean>(false)
   const [file, setFile] = useState<any>()
   const router = useRouter();

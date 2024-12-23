@@ -4,13 +4,10 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Button,
-  Select,
   useToast,
   SkeletonText,
   Avatar,
   Box,
-  IconButton,
-  Tooltip,
   Card,
   CardHeader,
   CardBody,
@@ -25,12 +22,10 @@ import {
   TagLabel,
   TagLeftIcon,
 } from '@chakra-ui/react';
-import { Link } from '@chakra-ui/next-js'
-//import Link from 'next/link';
-import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons';
+import { ChevronRightIcon } from '@chakra-ui/icons';
 import { MdEdit, MdLocalPolice } from "react-icons/md";
 import React, { useEffect, useState, useContext, useRef } from "react";
-import { useRouter, useSearchParams, useParams } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { UserContext } from '@/app/context/UserContext';
 import AddRoleInUser from '@/app/components/AddRoleInUser';
 import ToolsMenu from '@/app/components/ToolsMenu';
@@ -40,8 +35,6 @@ import { showToast } from '@/app/utils/chakra';
 import NotData from '@/app/components/NotData';
 
 export default function Home() {
-  const [show, setShow] = React.useState(false)
-  const handleClick = () => setShow(!show)
   const _userContext = useContext(UserContext)
   const router = useRouter();
   const [userId, setUserId] = useState<any>(null)
@@ -53,8 +46,6 @@ export default function Home() {
   const [logs, setLogs] = useState<any>([])
   const [page, setPage] = useState<number>(1);
   const [limit, setLimit] = useState<number>(3);
-  const isLoaded = useRef(false)
-  const isPage = useRef(false)
 
   const goRouter = (href: string) => {
     router.push(href)

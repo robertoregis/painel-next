@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import Main from "../components/Main";
 import { UserContext } from "../context/UserContext";
 import { ConfigContext } from '../context/ConfigContext';
-import { loadFromLocalStorage, removeFromLocalStorage, saveToLocalStorage } from "../utils/localStorage";
+import { loadFromLocalStorage, saveToLocalStorage } from "../utils/localStorage";
 import { useRouter } from 'next/navigation';
 import Loading from "../components/Loading";
 
@@ -20,7 +20,6 @@ export default function FeedLayout({
   const [loading, setLoading] = useState<boolean>(true)
   const router = useRouter()
   const isLogin = useRef(false)
-  const optionsToolsMenu: any = []
 
   const getConfig = async (token: string) => {
     if(!_configContext?.config || Object.keys(_configContext.config).length === 0) {

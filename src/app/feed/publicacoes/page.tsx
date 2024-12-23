@@ -7,12 +7,8 @@ import {
   Card,
   CardHeader,
   CardBody,
-  CardFooter,
   Stack,
-  Heading,
   Box,
-  Skeleton,
-  SkeletonCircle,
   SkeletonText,
   Image,
   useToast,
@@ -22,13 +18,11 @@ import {
   PopoverContent,
   IconButton,
   Tooltip,
-  Avatar,
   Wrap,
 } from '@chakra-ui/react';
 import { ChevronRightIcon, ArrowLeftIcon, ArrowRightIcon, DeleteIcon } from '@chakra-ui/icons';
 import React, { useEffect, useState, useContext, useRef } from "react";
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import { UserContext } from "../../context/UserContext";
 import { textSlice } from "@/app/utils/textFormatters";
 import { showToast } from '@/app/utils/chakra';
@@ -40,11 +34,10 @@ import { MdModeEdit } from "react-icons/md";
 import { ModalContext } from '@/app/context/ModalContext';
 
 export default function Home() {
-  const [show, setShow] = React.useState<boolean>(false)
   const [posts, setPosts] = useState<any[]>([])
   const [page, setPage] = useState<number>(1);
-  const [limit, setLimit] = useState<number>(10);
-  const [total, setTotal] = useState<number>(0);
+  //const [limit, setLimit] = useState<number>(10);
+  //const [total, setTotal] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false)
   const router = useRouter();
